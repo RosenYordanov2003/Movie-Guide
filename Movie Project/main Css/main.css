@@ -1,0 +1,42 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Poppins", sans-serif;
+}
+header {
+  background-color: black;
+  padding: 30px;
+  width: 100%;
+}
+.navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navigation ul li {
+  list-style: none;
+}
+.navigation ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.header-title {
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: yellow;
+}

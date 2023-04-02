@@ -1,0 +1,35 @@
+html {
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+.cart-title {
+  margin: 20px 0px 100px 20px;
+  font-size: 24px;
+  color: snow;
+}
+.added-movies {
+  display: flex;
+}
+.img-container{
+    width: 100%;
+}
+.img-container img{
+    width: 100%;
+}
+.movie-card {
+  width: 300px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+}
+.movie-title {
+  color: snow;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.movie-price {
+  color: snow;
+  font-size: 24px;
+}

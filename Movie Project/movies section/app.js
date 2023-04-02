@@ -1,3 +1,4 @@
+let globalArray = [];
 const searchButtonElement = document.querySelector('.search-btn');
 const inputElement = document.querySelector('.search-container input')
 const key = "5db0b93d";
@@ -14,28 +15,48 @@ function loadMovies(){
      let articleContainer = createHTMLElement('article','','movie-card','',sectionContainer);
      let imgContainer = createHTMLElement('div','','img-container','' ,articleContainer);
      createHTMLElement('img','','movie-img',{src:element.Poster},imgContainer);
+     let imgDescription =  createHTMLElement('p','Watch now','img-description','',imgContainer);
      const infoContainer = createHTMLElement('div','','movie-info','',articleContainer);
      createHTMLElement('p',element.Title,'movie-title','',infoContainer);
      createHTMLElement('p',element.Year,'movie-year','',infoContainer);
      createHTMLElement('p',` Price: $${(moviePrice * 2.20).toFixed(2)}`,'movie-price','',infoContainer);
      const btnContainer = createHTMLElement('div','','btn-container','',infoContainer);
      let cartButton =  createHTMLElement('button','add to cart','cart-btn','',btnContainer);
+     cartButton.addEventListener('click',addProduct);
      cartButton.innerHTML += '<i class="fas fa-shopping-cart"></i>';
      let favoriteBtn = createHTMLElement('button','add favorite','favorite-btn','',btnContainer);
      favoriteBtn.innerHTML += '<i class="fas fa-heart"></i>';
+
      articleContainer.addEventListener('mouseover',()=>{
       articleContainer.classList.add('movie-hover');
       imgContainer.classList.add('img-hover');
+      imgDescription.style.opacity = 1;
+      imgDescription.style.transform = 'translateY(0)';
      });
      articleContainer.addEventListener('mouseout',()=>{
       articleContainer.classList.remove('movie-hover');
       imgContainer.classList.remove('img-hover');
+      imgDescription.style.opacity = 0;
      });
-
      inputElement.value = '';
     }))
     .catch((error)=>console.error(error));
 }
+
+function addProduct(event){
+   const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
+   const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
+   const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
+   console.log(url);
+   let currentObject = {
+   name:movieTitle,
+   price:moviePrice,
+   url:url
+  };
+  globalArray.push(currentObject);
+  localStorage.setItem("array", JSON.stringify(globalArray));
+}
+
 function createHTMLElement(typeOfElement, content, className, attributes , parent ){
   const element = document.createElement(typeOfElement);
   if(content){

@@ -3,35 +3,50 @@ html {
   background-color: #302b63;
 }
 .cart-title {
-  margin: 30px 0px 100px 20px;
-  font-size: 24px;
-  color: snow;
+  color: #eee;
+  margin: 50px 0px 50px 0px;
+  padding-top: 30px;
+  font-family: "Coiny", cursive;
   text-align: center;
+  font-size: 70px;
+  -webkit-animation: bounce 0.4s ease infinite alternate;
 }
 
+@-webkit-keyframes bounce {
+  100% {
+    transform: translateY(-18px);
+  }
+}
 .added-movies {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  margin-left: 30px;
 }
-.img-container{
-    width: 80%;
-}
-.img-container img{
-    width: 100%;
+.img-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 .movie-card {
   width: 300px;
   height: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   background: rgba(0, 0, 0, 0.8);
-  padding: 24px 0px 24px 0px;
+  padding: 0px 0px 24px 0px;
   margin-bottom: 12px;
 }
+
 .movie-title {
+  color: snow;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.movie-year {
   color: snow;
   font-size: 18px;
   margin-bottom: 20px;
@@ -40,30 +55,30 @@ html {
   color: snow;
   font-size: 24px;
 }
-.order-info{
+.order-info {
   background: rgba(0, 0, 0, 0.8);
   display: inline-block;
   height: auto;
   padding: 40px;
   position: absolute;
-  right:0px
+  right: 0px;
 }
-.bought-movies{
+.bought-movies {
   display: flex;
   flex-direction: column;
   gap: 24px;
   list-style: none;
 }
-.bought-movies .movie-order{
+.bought-movies .movie-order {
   color: white;
   font-size: 20px;
 }
-.total-price{
+.total-price {
   margin-top: 22px;
   font-size: 24px;
   color: white;
 }
-.buy-button{
+.buy-button {
   font-size: 17px;
   margin-top: 24px;
   border: none;
@@ -73,29 +88,52 @@ html {
   background-color: #f5c71a;
   padding: 10px 18px;
   width: 120px;
-  transition: opacity 0.7s ease,transform 1s ease;
+  transition: opacity 0.7s ease, transform 1s ease;
 }
-.order-title{
+.remove-button {
+  background-color: red;
+  color: white;
+  margin-top: 40px;
+  border: none;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.remove-button:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+.remove-button:active {
+  opacity: 0.3;
+  transform: scale(1.05);
+}
+.remove-button i {
+  margin-left: 8px;
+}
+.order-title {
   font-size: 24px;
   color: white;
   margin-bottom: 24px;
 }
-.buy-button:hover{
+.buy-button:hover {
   opacity: 0.8;
-  scale: 1.050;
+  scale: 1.05;
 }
-.buy-button:active{
+.buy-button:active {
   opacity: 0.3;
-  scale: 1.050;
+  scale: 1.05;
 }
-.message-container{
+.message-container {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
-.message1{
-  text-transform: uppercase;
+.message1
+ {
+  text-transform: capitalize;
   background-image: linear-gradient(
     -225deg,
     #231557 0%,
@@ -108,19 +146,20 @@ html {
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
- -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textcl 2s linear infinite;
-  
-  font-size: 30px;
+  display: block;
+  font-size: 50px;
 }
 .message2{
-  text-transform: uppercase;
+  text-transform: capitalize;
   background-image: linear-gradient(
     -225deg,
-    #275d81 0%,
+    #231557 0%,
     #44107a 29%,
-    #ff13c4 67%,
+    #ff1361 67%,
     #fff800 100%
   );
   background-size: auto auto;
@@ -128,12 +167,14 @@ html {
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
- -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textcl 2s linear infinite;
-  margin-top: 20px;
-  font-size: 30px;
+  display: block;
+  font-size: 50px;
   text-align: center;
+  margin-top: 20px;
 }
 @keyframes textcl {
   to {

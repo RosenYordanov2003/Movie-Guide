@@ -30,13 +30,11 @@ function loadMovies(){
 
      articleContainer.addEventListener('mouseover',()=>{
       articleContainer.classList.add('movie-hover');
-      imgContainer.classList.add('img-hover');
       imgDescription.style.opacity = 1;
       imgDescription.style.transform = 'translateY(0)';
      });
      articleContainer.addEventListener('mouseout',()=>{
       articleContainer.classList.remove('movie-hover');
-      imgContainer.classList.remove('img-hover');
       imgDescription.style.opacity = 0;
      });
      inputElement.value = '';
@@ -48,9 +46,11 @@ function addProduct(event){
    const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
    const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
    const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
+   const year = event.target.parentElement.parentElement.children[1].textContent;
    console.log(url);
    let currentObject = {
    name:movieTitle,
+   year:year,
    price:moviePrice,
    url:url
   };

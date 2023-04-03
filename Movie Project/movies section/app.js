@@ -1,4 +1,5 @@
 let globalArray = [];
+let isSet = false;
 const searchButtonElement = document.querySelector('.search-btn');
 const inputElement = document.querySelector('.search-container input')
 const key = "5db0b93d";
@@ -53,8 +54,15 @@ function addProduct(event){
    price:moviePrice,
    url:url
   };
-  globalArray.push(currentObject);
-  localStorage.setItem("array", JSON.stringify(globalArray));
+  // if(!isSet){
+  // globalArray.push(currentObject);
+  // localStorage.setItem("array", JSON.stringify(globalArray));
+  // }
+ 
+  let array = JSON.parse(localStorage.getItem('globalArray')) || [];
+  array.push(currentObject);
+  localStorage.setItem('globalArray', JSON.stringify(array));
+  
 }
 
 function createHTMLElement(typeOfElement, content, className, attributes , parent ){

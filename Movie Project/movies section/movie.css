@@ -156,3 +156,18 @@ html{
 .cart-btn:active{
   opacity: 0.3;
 }
+.icon{
+ position: relative;
+}
+.notification{
+  display: none;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  font-size: 10px;
+  text-align: center;
+  padding: 4px;
+  position: absolute;
+  top: -22px;
+  left: 14px;
+}

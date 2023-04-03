@@ -1,6 +1,14 @@
 const libraryElement = document.getElementById("library");
 const movies = JSON.parse(localStorage.getItem("boughtMovies"));
 let library = JSON.parse(localStorage.getItem("library")) || [];
+let object = JSON.parse(localStorage.getItem('count'));
+
+if(object.notificationCount!==0){
+  document.querySelector('.notification').style.display = 'block';
+}
+else{
+  document.querySelector('.notification').style.display = 'none';
+}
  getMovies();
  console.log(library);
  loadLibrary();

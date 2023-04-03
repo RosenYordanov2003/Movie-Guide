@@ -1,5 +1,8 @@
 let movies =  JSON.parse(localStorage.getItem('globalArray'));
 let moviesArray = [];
+let counter = JSON.parse(localStorage.getItem('count'));
+counter = 0;
+localStorage.setItem('count',JSON.stringify({notificationCount:counter}));
 if(movies.length===0){
     document.querySelector('.order-info').style.display ='none';
 }

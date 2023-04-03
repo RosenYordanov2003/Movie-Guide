@@ -1,11 +1,20 @@
 let globalArray = [];
-let isSet = false;
+
+let counter = 0;
 const searchButtonElement = document.querySelector('.search-btn');
 const inputElement = document.querySelector('.search-container input')
 const key = "5db0b93d";
 const sectionContainer = document.querySelector('.movies')
 searchButtonElement.addEventListener('click', loadMovies);
 
+let object = JSON.parse(localStorage.getItem('count'));
+
+if(object.notificationCount!==0){
+  document.querySelector('.notification').style.display = 'block';
+}
+else{
+  document.querySelector('.notification').style.display = 'none';
+}
 function loadMovies(){
     let baseURL =  `http://www.omdbapi.com/?s=${inputElement.value}&apikey=${key}`;
     sectionContainer.innerHTML = '';
@@ -43,6 +52,11 @@ function loadMovies(){
 }
 
 function addProduct(event){
+   
+   let spanNotification = document.querySelector('.notification');
+   spanNotification.textContent = `+${++counter}`;
+   spanNotification.style.display = 'block'
+   localStorage.setItem('count',JSON.stringify({notificationCount:counter}));
    const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
    const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
    const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
@@ -54,11 +68,7 @@ function addProduct(event){
    price:moviePrice,
    url:url
   };
-  // if(!isSet){
-  // globalArray.push(currentObject);
-  // localStorage.setItem("array", JSON.stringify(globalArray));
-  // }
- 
+  
   let array = JSON.parse(localStorage.getItem('globalArray')) || [];
   array.push(currentObject);
   localStorage.setItem('globalArray', JSON.stringify(array));

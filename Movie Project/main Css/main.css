@@ -42,8 +42,22 @@ header {
   letter-spacing: 1px;
   color: yellow;
 }
-
 .navigation ul li a:hover{
   color: black;
   background-color: #ffb825;
 }
+.icon{
+  position: relative;
+ }
+ .notification{
+   display: none;
+   background-color: red;
+   color: white;
+   border-radius: 20px;
+   font-size: 10px;
+   text-align: center;
+   padding: 4px;
+   position: absolute;
+   top: -22px;
+   left: 14px;
+ }

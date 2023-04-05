@@ -4,6 +4,12 @@ const sectionElement = document.getElementById("movie-section");
 const container = document.querySelector('.container');
 buttonElement.addEventListener("click", loadMovie);
 const key = "5db0b93d";
+let object = JSON.parse(localStorage.getItem("count"));
+if (object.notificationCount !== 0) {
+  document.querySelector(".notification").style.display = "block";
+} else {
+  document.querySelector(".notification").style.display = "none";
+}
 
 async function loadMovie() {
   reset();

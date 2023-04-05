@@ -6,7 +6,7 @@ body {
   height: 100vh;
 }
 html{
-  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  background-color: #5f0a87;
 }
 
 .search-container {
@@ -78,7 +78,7 @@ html{
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   position: absolute;
-  background-color: #CF1020;
+  background-color:	#55DD33;
   color: white;
   font-weight: bold;
   bottom: 0px;
@@ -141,6 +141,7 @@ html{
   font-weight: bold;
   padding: 5px 12px;
   border: none;
+  transition: opacity 01s ease;
 }
 .movie-hover{
   transform: scale(1.050);
@@ -170,4 +171,10 @@ html{
   position: absolute;
   top: -22px;
   left: 14px;
+}
+.favorite-btn:hover{
+  opacity: 0.6;
+}
+.favorite-btn:active{
+  opacity: 0.3;
 }

@@ -25,7 +25,7 @@ function loadMovies(){
      let articleContainer = createHTMLElement('article','','movie-card','',sectionContainer);
      let imgContainer = createHTMLElement('div','','img-container','' ,articleContainer);
      createHTMLElement('img','','movie-img',{src:element.Poster},imgContainer);
-     let imgDescription =  createHTMLElement('p','Watch now','img-description','',imgContainer);
+     let imgDescription =  createHTMLElement('p','Get Now','img-description','',imgContainer);
      const infoContainer = createHTMLElement('div','','movie-info','',articleContainer);
      createHTMLElement('p',element.Title,'movie-title','',infoContainer);
      createHTMLElement('p',element.Year,'movie-year','',infoContainer);
@@ -35,6 +35,7 @@ function loadMovies(){
      cartButton.addEventListener('click',addProduct);
      cartButton.innerHTML += '<i class="fas fa-shopping-cart"></i>';
      let favoriteBtn = createHTMLElement('button','add favorite','favorite-btn','',btnContainer);
+     favoriteBtn.addEventListener('click',addToFavorite);
      favoriteBtn.innerHTML += '<i class="fas fa-heart"></i>';
 
      articleContainer.addEventListener('mouseover',()=>{
@@ -54,14 +55,12 @@ function loadMovies(){
 function addProduct(event){
    
    let spanNotification = document.querySelector('.notification');
-   spanNotification.textContent = `+${++counter}`;
    spanNotification.style.display = 'block'
    localStorage.setItem('count',JSON.stringify({notificationCount:counter}));
    const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
    const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
    const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
    const year = event.target.parentElement.parentElement.children[1].textContent;
-   console.log(url);
    let currentObject = {
    name:movieTitle,
    year:year,
@@ -70,10 +69,33 @@ function addProduct(event){
   };
   
   let array = JSON.parse(localStorage.getItem('globalArray')) || [];
-  array.push(currentObject);
+  if(!array.find((movie) => movie.name === currentObject.name)){
+    spanNotification.textContent = `+${++counter}`;
+    array.push(currentObject);
+   }
   localStorage.setItem('globalArray', JSON.stringify(array));
   
 }
+
+function addToFavorite(event){
+  const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
+  const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
+  const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
+  const year = event.target.parentElement.parentElement.children[1].textContent;
+
+  let currentObject = {
+    name:movieTitle,
+    year:year,
+    price:moviePrice,
+    url:url
+   };
+
+   let array = JSON.parse(localStorage.getItem('favorite-movies')) || [];
+   if(!array.find((movie) => movie.name === currentObject.name)){
+    array.push(currentObject);
+   }
+   localStorage.setItem('favorite-movies',JSON.stringify(array));
+ }
 
 function createHTMLElement(typeOfElement, content, className, attributes , parent ){
   const element = document.createElement(typeOfElement);

@@ -3,7 +3,7 @@ let moviesArray = [];
 let counter = JSON.parse(localStorage.getItem('count'));
 counter = 0;
 localStorage.setItem('count',JSON.stringify({notificationCount:counter}));
-if(movies.length===0){
+if(movies.length ===0){
     document.querySelector('.order-info').style.display ='none';
 }
 const moviesSectionElement = document.querySelector('.added-movies');
@@ -12,9 +12,7 @@ const totalPriceParagraphElement = document.querySelector('.total-price');
 const buyButton = document.querySelector('.buy-button');
 
 buyButton.addEventListener('click',()=>{
-  if(price===0){
-    return;
-  }
+  
   moviesSectionElement.innerHTML = '';
   document.querySelector('.order-info').innerHTML = '';
   document.querySelector('.order-info').style.padding = 0;
@@ -65,6 +63,9 @@ function removeMovie(event){
     price-= Number(priceString.substring(priceString.indexOf('$') + 1));
     totalPriceParagraphElement.textContent = `$${price.toFixed(2)}`;
     removeLiElement(movieTitle);
+    if(movies.length === 0){
+        document.querySelector('.order-info').style.display = 'none';
+    }
 }
 
 function removeLiElement(movieTitle){

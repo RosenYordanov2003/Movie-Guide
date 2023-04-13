@@ -18,9 +18,9 @@ html {
   flex-wrap: wrap;
   gap: 30px;
   margin: 100px 20px 30px 30px;
+  max-width: 70vw;
 }
 .img-container {
-  /* width: 60%; */
   width: 350px;
   position: relative;
 }

@@ -3,10 +3,12 @@ body {
   background-position: center;
   background-size: cover;
   object-fit: cover;
-  height: 100vh;
 }
 html{
   background-color: #5f0a87;
+}
+main{
+  max-width: 700px;
 }
 
 .search-container {

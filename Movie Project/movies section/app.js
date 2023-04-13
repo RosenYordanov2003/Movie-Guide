@@ -9,11 +9,11 @@ searchButtonElement.addEventListener('click', loadMovies);
 
 let object = JSON.parse(localStorage.getItem('count'));
 
-if(object.notificationCount!==0){
-  document.querySelector('.notification').style.display = 'block';
-}
-else{
-  document.querySelector('.notification').style.display = 'none';
+if (object.notificationCount !== 0) {
+  document.querySelector(".notification").textContent += object.notificationCount
+  document.querySelector(".notification").style.display = "block";
+} else {
+  document.querySelector(".notification").style.display = "none";
 }
 function loadMovies(){
     let baseURL =  `http://www.omdbapi.com/?s=${inputElement.value}&apikey=${key}`;
@@ -54,9 +54,9 @@ function loadMovies(){
 
 function addProduct(event){
    
+  debugger;
    let spanNotification = document.querySelector('.notification');
    spanNotification.style.display = 'block'
-   localStorage.setItem('count',JSON.stringify({notificationCount:counter}));
    const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
    const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
    const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
@@ -69,9 +69,12 @@ function addProduct(event){
   };
   
   let array = JSON.parse(localStorage.getItem('globalArray')) || [];
-  if(!array.find((movie) => movie.name === currentObject.name)){
+  let movie = array.find((movie) => movie.name === currentObject.name);
+  console.log(movie);
+  if(!array.find((movie) => movie.name === currentObject.name)||array.length===0){
     spanNotification.textContent = `+${++counter}`;
     array.push(currentObject);
+    localStorage.setItem('count',JSON.stringify({notificationCount:counter}));
    }
   localStorage.setItem('globalArray', JSON.stringify(array));
   

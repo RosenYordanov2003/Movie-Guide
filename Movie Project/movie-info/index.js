@@ -6,6 +6,7 @@ buttonElement.addEventListener("click", loadMovie);
 const key = "5db0b93d";
 let object = JSON.parse(localStorage.getItem("count"));
 if (object.notificationCount !== 0) {
+  document.querySelector(".notification").textContent += object.notificationCount
   document.querySelector(".notification").style.display = "block";
 } else {
   document.querySelector(".notification").style.display = "none";

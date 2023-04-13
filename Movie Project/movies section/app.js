@@ -56,7 +56,6 @@ function addProduct(event){
    
   debugger;
    let spanNotification = document.querySelector('.notification');
-   spanNotification.style.display = 'block'
    const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
    const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
    const url = event.target.parentElement.parentElement.parentElement.children[0].children[0].src;
@@ -69,9 +68,8 @@ function addProduct(event){
   };
   
   let array = JSON.parse(localStorage.getItem('globalArray')) || [];
-  let movie = array.find((movie) => movie.name === currentObject.name);
-  console.log(movie);
   if(!array.find((movie) => movie.name === currentObject.name)||array.length===0){
+    spanNotification.style.display = 'block'
     spanNotification.textContent = `+${++counter}`;
     array.push(currentObject);
     localStorage.setItem('count',JSON.stringify({notificationCount:counter}));

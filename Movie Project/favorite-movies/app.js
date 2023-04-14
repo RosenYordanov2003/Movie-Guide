@@ -5,15 +5,16 @@ if (object.notificationCount !== 0) {
 } else {
   document.querySelector(".notification").style.display = "none";
 }
-let favoriteArray = JSON.parse(localStorage.getItem('favorite-movies'));
+
+let favoriteMoviesArray = JSON.parse(localStorage.getItem('favorite-movies'));
 
 const movieSection = document.getElementById('movies');
 loadMovies();
 
 function loadMovies(){
   movieSection.innerHTML = '';
-  for (let index = 0; index < favoriteArray.length; index++) {
-    const currentObject = favoriteArray[index];
+  for (let index = 0; index < favoriteMoviesArray.length; index++) {
+    const currentObject = favoriteMoviesArray[index];
     let articleContainer = createHTMLElement('article','','movie-card','',movieSection);
     let imgContainer = createHTMLElement('div','','img-container','',articleContainer);
     createHTMLElement('img','','',{src:currentObject.url},imgContainer);
@@ -40,8 +41,9 @@ function loadMovies(){
 }
 function removeFromFavorite(event){
   let movieName = event.target.parentElement.children[1].textContent;
-  let index = favoriteArray.findIndex((movie) => movie.name === movieName);
-  favoriteArray.splice(index, 1);
+  let index = favoriteMoviesArray.findIndex((movie) => movie.name === movieName);
+  favoriteMoviesArray.splice(index, 1);
+  localStorage.setItem("favorite-movies", JSON.stringify(favoriteMoviesArray));
   loadMovies();
 }
 function createHTMLElement(typeOfElement, content, className, attributes, parentElement){

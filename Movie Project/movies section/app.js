@@ -54,7 +54,6 @@ function loadMovies(){
 
 function addProduct(event){
    
-  debugger;
    let spanNotification = document.querySelector('.notification');
    const movieTitle = event.target.parentElement.parentElement.children[0].textContent;
    const moviePrice = event.target.parentElement.parentElement.children[2].textContent;
@@ -90,12 +89,12 @@ function addToFavorite(event){
     price:moviePrice,
     url:url
    };
-
+   debugger;
    let array = JSON.parse(localStorage.getItem('favorite-movies')) || [];
    if(!array.find((movie) => movie.name === currentObject.name)){
     array.push(currentObject);
+    localStorage.setItem('favorite-movies',JSON.stringify(array));
    }
-   localStorage.setItem('favorite-movies',JSON.stringify(array));
  }
 
 function createHTMLElement(typeOfElement, content, className, attributes , parent ){

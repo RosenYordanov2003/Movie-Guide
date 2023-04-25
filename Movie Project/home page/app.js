@@ -12,7 +12,6 @@ document.querySelectorAll(".left-btn").forEach((btn) => btn.addEventListener('cl
 document.querySelectorAll('.right-btn').forEach((btn) => btn.addEventListener('click', moveForward));
 
 function moveBack(event){
-  debugger;
   let index =  Array.from(bestMoviesSectionElement.children).indexOf(event.target.parentElement.parentElement);
   let newIndex = index - 1;
   event.target.parentElement.parentElement.classList.add("visible");

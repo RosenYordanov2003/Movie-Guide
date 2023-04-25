@@ -1,7 +1,7 @@
 const inputElement = document.getElementById("search");
 const buttonElement = document.getElementById("search-button");
 const sectionElement = document.getElementById("movie-section");
-const container = document.querySelector('.container');
+const containerElement = document.querySelector('.container');
 buttonElement.addEventListener("click", loadMovie);
 const key = "5db0b93d";
 let object = JSON.parse(localStorage.getItem("count"));
@@ -16,7 +16,7 @@ async function loadMovie() {
   reset();
   let movieName = inputElement.value;
   const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
-  if(sectionElement.childElementCount> 0){
+  if(sectionElement.childElementCount > 0){
     sectionElement.children[0].remove();
   }
   try {
@@ -40,6 +40,24 @@ async function loadMovie() {
   }
 }
 function createMovieCard(object){
+  if(window.innerWidth >=1600 && window.innerWidth <= 1800){
+    containerElement.style.top = '70%';
+  }
+  if(window.innerWidth >=1200 && window.innerWidth <= 1300){
+    containerElement.style.top = '100%';
+  }
+  if(window.innerWidth >= 1300 && window.innerWidth <= 1400){
+    containerElement.style.top = '60%';
+  } 
+ if(window.innerWidth <= 1200){
+  containerElement.style.top = '130%';
+ }
+if(window.innerWidth <= 400){
+  containerElement.style.top = '140%';
+ }
+ if(window.innerWidth <= 900){
+  containerElement.style.top = '120%';
+ } 
  const articleContainer = createHTMLElement('article','','article-container','',sectionElement);
  const movieImgContainer = createHTMLElement('section','', 'movie-img-container','',articleContainer);
  createHTMLElement('img','', 'movie-img', {src:object.Poster}, movieImgContainer);
@@ -56,10 +74,10 @@ function createMovieCard(object){
   createHTMLElement('li',genre,'','',ulGenre);
  });
  
- const plotSection = createHTMLElement('section','','plot','',container);
+ const plotSection = createHTMLElement('section','','plot','',containerElement);
  createHTMLElement('p','Plot:','plot-title','',plotSection);
  createHTMLElement('p',object.Plot,'plot-content','',plotSection);
- const actorsSection = createHTMLElement('section','','actors-section','',container);
+ const actorsSection = createHTMLElement('section','','actors-section','',containerElement);
  createHTMLElement('p','Actors:','actors-title','',actorsSection);
  createHTMLElement('p',object.Actors,'actors','',actorsSection);
 }

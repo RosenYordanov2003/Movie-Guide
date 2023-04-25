@@ -33,6 +33,7 @@ body {
   transition: opacity 300ms;
   color: black;
   cursor: pointer;
+  padding: 5px;
 }
 #search-button:active {
   opacity: 0.5;

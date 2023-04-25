@@ -1,0 +1,46 @@
+@media screen and (max-width: 600px) {
+  .navigation ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .description {
+    height: auto;
+    position: relative;
+    width: 50%;
+    margin-bottom: 14rem;
+    left: 30%;
+    top: 10%;
+    background: transparent;
+  }
+ 
+  .movie-card .movie-title {
+    font-size: 14px;
+  }
+  .description p {
+    line-height: 1.4;
+    font-size: 14px;
+  }
+  .description a {
+    font-size: 16px;
+  }
+  .best-movies-section {
+    position: relative;
+    top: unset;
+    margin-top: 70%;
+  }
+  .movie-card{
+    gap: 10px;
+    text-align: center;
+  }
+  .best-movies{
+    flex-direction: column;
+    gap: 0px;
+  }
+  .footer-navigation ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contacts-container {
+    text-align: center;
+  }
+}

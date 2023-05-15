@@ -1,13 +1,16 @@
 @media screen and (max-width:600px) {
     .navigation ul {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
     }
     .img-container, .img-container img{
         width: 100%;
     }
     .movie-info{
         padding: 20px;
+    }
+    .img-description{
+        width: 100%;
     }
 }
 @media screen and (min-width: 600px) and (max-width:1100px) {
@@ -17,5 +20,8 @@
     }
     #library{
         justify-content: center;
+    }
+    .img-description{
+        width: 100%;
     } 
 }

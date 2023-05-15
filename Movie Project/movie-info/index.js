@@ -2,7 +2,7 @@ const inputElement = document.getElementById("search");
 const buttonElement = document.getElementById("search-button");
 const sectionElement = document.getElementById("movie-section");
 const containerElement = document.querySelector('.container');
-buttonElement.addEventListener("click", loadMovie);
+buttonElement.addEventListener("click", loadMovieInfo);
 const key = "5db0b93d";
 let object = JSON.parse(localStorage.getItem("count"));
 if (object.notificationCount !== 0) {
@@ -12,7 +12,7 @@ if (object.notificationCount !== 0) {
   document.querySelector(".notification").style.display = "none";
 }
 
-async function loadMovie() {
+async function loadMovieInfo() {
   reset();
   let movieName = inputElement.value;
   const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
@@ -40,24 +40,6 @@ async function loadMovie() {
   }
 }
 function createMovieCard(object){
-  if(window.innerWidth >=1600 && window.innerWidth <= 1800){
-    containerElement.style.top = '70%';
-  }
-  if(window.innerWidth >=1200 && window.innerWidth <= 1300){
-    containerElement.style.top = '100%';
-  }
-  if(window.innerWidth >= 1300 && window.innerWidth <= 1400){
-    containerElement.style.top = '60%';
-  } 
- if(window.innerWidth <= 1200){
-  containerElement.style.top = '130%';
- }
-if(window.innerWidth <= 400){
-  containerElement.style.top = '140%';
- }
- if(window.innerWidth <= 900){
-  containerElement.style.top = '120%';
- } 
  const articleContainer = createHTMLElement('article','','article-container','',sectionElement);
  const movieImgContainer = createHTMLElement('section','', 'movie-img-container','',articleContainer);
  createHTMLElement('img','', 'movie-img', {src:object.Poster}, movieImgContainer);
@@ -70,6 +52,7 @@ if(window.innerWidth <= 400){
  createHTMLElement('li',object.Language,'','',ulElement);
  createHTMLElement('li',object.Released,'','',ulElement);
  const ulGenre = createHTMLElement('ul','','genres','',movieRatingsContainer);
+ containerElement.classList.add('active-movie-card');
  object.Genre.split(', ').forEach(genre => {
   createHTMLElement('li',genre,'','',ulGenre);
  });

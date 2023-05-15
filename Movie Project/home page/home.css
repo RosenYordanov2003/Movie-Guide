@@ -1,12 +1,14 @@
-.content-section {
+body{
   background-image: url(movie.avif);
-  height: 110vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+.content-section {
+  height: 110vh;
+}
 .description {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);
   position: absolute;
   border-radius: 40px;
   padding: 20px;

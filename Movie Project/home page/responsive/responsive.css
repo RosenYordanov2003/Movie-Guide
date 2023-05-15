@@ -1,46 +1,133 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .navigation ul {
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
   }
   .description {
-    height: auto;
     position: relative;
-    width: 50%;
-    margin-bottom: 14rem;
-    left: 30%;
-    top: 10%;
-    background: transparent;
+    right: unset;
+    left: 47%;
+    top: 30%;
+    margin: 0px 20px 20px 20px;
+    width: 100%;
+    font-size: 0.3rem;
+    line-height: normal;
   }
- 
-  .movie-card .movie-title {
-    font-size: 14px;
+  .best-movies-section,
+  .title {
+    display: none;
   }
-  .description p {
-    line-height: 1.4;
-    font-size: 14px;
+
+  .footer-navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 7px;
   }
-  .description a {
-    font-size: 16px;
+  .footer-navigation ul li,
+  .footer-navigation ul li a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .contacts-container {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+/* tablets */
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+  .content-section {
+    height: auto;
+  }
+  .navigation ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 7px;
+  }
+  .description {
+    position: relative;
+    right: unset;
+    top: 24%;
+    left: 48%;
+    margin: 100px 20px 50px 20px;
+    width: 90%;
+    font-size: 0.3rem;
+    line-height: 1.1;
   }
   .best-movies-section {
     position: relative;
     top: unset;
-    margin-top: 70%;
+    left: unset;
+    transform: translate(0, 0);
   }
-  .movie-card{
-    gap: 10px;
+  .movie-card img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+  }
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+  .footer-navigation ul li,
+  .footer-navigation ul li a {
+    font-size: 1.2rem;
     text-align: center;
-  }
-  .best-movies{
-    flex-direction: column;
-    gap: 0px;
-  }
-  .footer-navigation ul {
-    flex-direction: column;
-    gap: 1rem;
   }
   .contacts-container {
     text-align: center;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1550px) {
+  .content-section {
+    height: auto;
+  }
+  .description {
+    position: relative;
+    right: unset;
+    top: unset;
+    left: 48%;
+    margin: 100px 20px 50px 20px;
+    width: 70%;
+    font-size: 0.3rem;
+    line-height: 1.1;
+  }
+  .best-movies-section {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: translate(0, 0);
+  }
+  .movie-card img {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+  }
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie-title {
+    font-size: 1rem;
   }
 }

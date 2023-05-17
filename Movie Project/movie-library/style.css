@@ -1,6 +1,3 @@
-html {
-  background-color: #5f0a87;
-}
 .title {
   color: #EEE;
   margin: 50px 0px 50px 0px;
@@ -10,6 +7,8 @@ html {
   font-size: 50px;
   text-transform: capitalize;
   letter-spacing: 2px;
+  position: relative;
+  z-index: 101;
 }
 
 #library {
@@ -17,6 +16,8 @@ html {
   flex-wrap: wrap;
   gap: 30px;
   margin: 100px 20px 30px 30px;
+  position: relative;
+  z-index: 100;
 }
 .img-container {
   width: 60%;
@@ -30,7 +31,7 @@ html {
 .movie-card {
   display: flex;
   width: 500px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
   margin-right: 24px;
   transition: transform 0.5s ease;
@@ -66,3 +67,4 @@ html {
 .movie-card:hover {
   transform: scale(1.05);
 }
+

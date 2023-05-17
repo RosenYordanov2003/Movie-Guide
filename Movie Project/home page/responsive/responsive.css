@@ -13,6 +13,9 @@
     font-size: 0.3rem;
     line-height: normal;
   }
+  .description p,.description a{
+    font-size: 0.4rem;
+  }
   .best-movies-section,
   .title {
     display: none;
@@ -64,9 +67,12 @@
     top: 24%;
     left: 48%;
     margin: 100px 20px 50px 20px;
-    width: 90%;
+    width: 50%;
     font-size: 0.3rem;
     line-height: 1.1;
+  }
+  .description p,.description a{
+    font-size: 0.5rem;
   }
   .best-movies-section {
     position: relative;
@@ -108,8 +114,10 @@
     left: 48%;
     margin: 100px 20px 50px 20px;
     width: 70%;
-    font-size: 0.3rem;
     line-height: 1.1;
+  }
+  .description p, .description a{
+    font-size: 0.9rem;
   }
   .best-movies-section {
     position: relative;

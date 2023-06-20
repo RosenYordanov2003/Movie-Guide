@@ -1,1 +1,1 @@
-# Movie-Guide
+I'have decided to make simple Movie app design using IMDB Api. 

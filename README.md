@@ -1,6 +1,6 @@
 ## I have made simple Movie app design using IMDB Api. 
 ## Technologies which I have used to build the project:
-- JS, HTML, CSS AJAX Request to IMDB Api, I also have used Local storage to save movies into cart and to user favorite-movies collection.
+- JS, HTML, CSS AJAX Request to IMDB Api, I also have used Local storage to save movies into cart and to user favorite-movies collection. I have used local storage to save user movies movies that are in the cart and for cart notifications
 ### Functionality
 - User can search a set of movies when enter a movie name into the search bar
 - User can buy movies, can add to his favorite-movies collection and can remove it from there.

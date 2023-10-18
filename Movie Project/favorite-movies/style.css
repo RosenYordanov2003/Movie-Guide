@@ -1,0 +1,97 @@
+html {
+  min-height: 100vh;
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+.title {
+  color: #eee;
+  margin: 50px 0px 50px 0px;
+  padding-top: 30px;
+  font-family: "Coiny", cursive;
+  text-align: center;
+  font-size: 50px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+#movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 100px 20px 30px 30px;
+  max-width: 70vw;
+}
+.img-container {
+  width: 350px;
+  position: relative;
+}
+.img-container img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+.movie-card {
+  display: flex;
+  width: 700px;
+  background: rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  margin-right: 24px;
+  transition: transform 0.5s ease;
+}
+.movie-title,
+.movie-title-label,
+.movie-year-label,
+.movie-year {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+.movie-info {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  align-items: center;
+ 
+}
+.img-description {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  background-color: #cf1020;
+  color: white;
+  font-weight: bold;
+  bottom: 0px;
+  width: 90%;
+  text-align: center;
+  box-shadow: inset 10px 10px 30px rgba(0, 0, 0, 0.9);
+  padding: 8px;
+}
+.movie-card:hover {
+  transform: scale(1.05);
+}
+.remove-btn {
+  background-color: #F9629F;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  width: 70%;
+  padding: 10px 14px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 70px;
+  text-transform: capitalize;
+  transition: opacity 0.5s ease;
+}
+.remove-btn i {
+  margin-left: 4px;
+}
+.remove-btn:hover{
+  opacity: 0.7;
+}
+.remove-btn:active{
+  opacity: 0.3;
+}

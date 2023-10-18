@@ -1,0 +1,141 @@
+@media screen and (max-width: 700px) {
+  .navigation ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .description {
+    position: relative;
+    right: unset;
+    left: 47%;
+    top: 30%;
+    margin: 0px 20px 20px 20px;
+    width: 100%;
+    font-size: 0.3rem;
+    line-height: normal;
+  }
+  .description p,.description a{
+    font-size: 0.4rem;
+  }
+  .best-movies-section,
+  .title {
+    display: none;
+  }
+
+  .footer-navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 7px;
+  }
+  .footer-navigation ul li,
+  .footer-navigation ul li a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .contacts-container {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+/* tablets */
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+  .content-section {
+    height: auto;
+  }
+  .navigation ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 7px;
+  }
+  .description {
+    position: relative;
+    right: unset;
+    top: 24%;
+    left: 48%;
+    margin: 100px 20px 50px 20px;
+    width: 50%;
+    font-size: 0.3rem;
+    line-height: 1.1;
+  }
+  .description p,.description a{
+    font-size: 0.5rem;
+  }
+  .best-movies-section {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: translate(0, 0);
+  }
+  .movie-card img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+  }
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+  .footer-navigation ul li,
+  .footer-navigation ul li a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .contacts-container {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1550px) {
+  .content-section {
+    height: auto;
+  }
+  .description {
+    position: relative;
+    right: unset;
+    top: unset;
+    left: 48%;
+    margin: 100px 20px 50px 20px;
+    width: 70%;
+    line-height: 1.1;
+  }
+  .description p, .description a{
+    font-size: 0.9rem;
+  }
+  .best-movies-section {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: translate(0, 0);
+  }
+  .movie-card img {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+  }
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie-title {
+    font-size: 1rem;
+  }
+}

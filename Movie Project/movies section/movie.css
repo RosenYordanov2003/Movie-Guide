@@ -60,9 +60,9 @@ body {
 .movie-card {
   display: flex;
   width: 32%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   margin-bottom: 24px;
-  margin-right: 28px;
+  margin-right: 16px;
 }
 .img-container {
   width: 60%;
